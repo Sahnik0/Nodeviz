@@ -1,0 +1,230 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+    
+    /* Node colors */
+    --node-default: 211, 100%, 78%;
+    --node-border: 211, 80%, 60%;
+    --node-text: 0, 0%, 100%;
+    --node-start: 142, 71%, 45%;
+    --node-goal: 0, 84%, 60%;
+    --node-visited: 271, 91%, 65%;
+    --node-path: 217, 91%, 60%;
+    
+    /* Edge colors */
+    --edge-default: 0, 0%, 40%;
+    --edge-path: 217, 91%, 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom font styles */
+  @font-face {
+    font-family: 'Handlee';
+    src: url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+    font-display: swap;
+  }
+  
+  .font-hand {
+    font-family: 'Handlee', cursive;
+  }
+}
+
+/* Add node and edge styling */
+.node {
+  stroke: var(--node-border-color, black);
+  stroke-width: 1.5;
+}
+
+.node-default {
+  fill: hsl(var(--node-default));
+  stroke: hsl(var(--node-border));
+  --node-border-color: hsl(var(--node-border));
+}
+
+.node-start {
+  fill: hsl(var(--node-start));
+  stroke: hsl(var(--node-start));
+  --node-border-color: hsl(var(--node-start));
+}
+
+.node-goal {
+  fill: hsl(var(--node-goal));
+  stroke: hsl(var(--node-goal));
+  --node-border-color: hsl(var(--node-goal));
+}
+
+.node-visited {
+  fill: hsl(var(--node-visited));
+  stroke: hsl(var(--node-visited));
+  --node-border-color: hsl(var(--node-visited));
+}
+
+.node-path {
+  fill: hsl(var(--node-path));
+  stroke: hsl(var(--node-path));
+  --node-border-color: hsl(var(--node-path));
+}
+
+.fill-node-default {
+  fill: hsl(var(--node-default));
+}
+
+.fill-node-start {
+  fill: hsl(var(--node-start));
+}
+
+.fill-node-goal {
+  fill: hsl(var(--node-goal));
+}
+
+.fill-node-visited {
+  fill: hsl(var(--node-visited));
+}
+
+.fill-node-path {
+  fill: hsl(var(--node-path));
+}
+
+.stroke-node-border {
+  stroke: hsl(var(--node-border));
+}
+
+.fill-node-text {
+  fill: hsl(var(--node-text));
+}
+
+.edge {
+  stroke-width: 2;
+}
+
+.edge-default {
+  stroke: hsl(var(--edge-default));
+}
+
+.edge-path {
+  stroke: hsl(var(--edge-path));
+}
+
+.fill-edge-default {
+  fill: hsl(var(--edge-default));
+}
+
+.fill-edge-path {
+  fill: hsl(var(--edge-path));
+}
+
+/* Animation classes */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes node-visited {
+  0% { transform: scale(0.8); fill-opacity: 0.3; }
+  50% { transform: scale(1.2); fill-opacity: 0.8; }
+  100% { transform: scale(1); fill-opacity: 1; }
+}
+
+.animate-node-visited {
+  animation: node-visited 0.6s ease-out forwards;
+}
+
+@keyframes node-path {
+  0% { transform: scale(0.8); fill-opacity: 0.3; }
+  50% { transform: scale(1.3); fill-opacity: 0.8; }
+  100% { transform: scale(1); fill-opacity: 1; }
+}
+
+.animate-node-path {
+  animation: node-path 0.8s ease-out forwards;
+}
+
+/* Add doodlish style classes */
+.border-dashed {
+  border-style: dashed;
+}
+
+.stroke-dashed {
+  stroke-dasharray: 5, 5;
+}
+
+.text-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}

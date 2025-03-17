@@ -1,0 +1,17 @@
+
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).(js|css|json|svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}
