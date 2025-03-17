@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/UI/card";
+import { Button } from "@/components/UI/button";
 import { CircleIcon, SquareIcon, ArrowRightIcon, ServerIcon, Trash2Icon, Undo2Icon } from 'lucide-react';
-import { Toggle } from "@/components/ui/toggle";
+import { Toggle } from "@/components/UI/toggle";
 
 interface NodeEdgeCreatorProps {
   onCreateNode: (type: 'circle' | 'square') => void;

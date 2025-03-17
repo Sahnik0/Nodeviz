@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/UI/card";
+import { Button } from "@/components/UI/button";
 import { Info } from 'lucide-react';
 import { AlgorithmResult, AlgorithmType, HeuristicType } from '@/lib/algorithms';
 import AlgorithmSelector from './AlgorithmSelector';

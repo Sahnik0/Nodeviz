@@ -1,8 +1,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Graph, Node, Edge } from '@/lib/graphUtils';
-import { Input } from '@/components/ui/input';
-import { Button } from "@/components/ui/button";
+import { Input } from '@/components/UI/input';
+import { Button } from "@/components/UI/button";
 import { Check, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 

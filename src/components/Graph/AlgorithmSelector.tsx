@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/UI/card";
+import { Button } from "@/components/UI/button";
+import { Badge } from "@/components/UI/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/UI/select";
+import { Slider } from "@/components/UI/slider";
 import { Play, Pause, RotateCcw, ArrowRight, Loader2 } from 'lucide-react';
 import { AlgorithmResult, AlgorithmType, HeuristicType } from '@/lib/algorithms';
 

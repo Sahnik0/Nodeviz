@@ -7,7 +7,7 @@ import { useGraph } from '@/hooks/useGraph';
 import { useAlgorithm } from '@/hooks/useAlgorithm';
 import { Menu, Trash2, Undo2, Info, X } from 'lucide-react';
 import { toast } from 'sonner';
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/UI/button";
 import { useIsMobile } from '@/hooks/use-mobile';
 import { resetNodeCounter } from '@/lib/graphUtils';
 
