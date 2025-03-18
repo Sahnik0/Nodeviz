@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import GraphCanvas from '@/components/Graph/GraphCanvas';
 import GraphControls from '@/components/Graph/GraphControls';
 import NodeEdgeCreator from '@/components/Graph/NodeEdgeCreator';
+import Footer from '@/components/Layout/Footer'; // Import the Footer component
 import { useGraph } from '@/hooks/useGraph';
 import { useAlgorithm } from '@/hooks/useAlgorithm';
 import { Menu, Trash2, Undo2, Info, X } from 'lucide-react';
@@ -269,7 +269,7 @@ const Index = () => {
         <div className="container mx-auto py-3 px-4 sm:px-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold">Graph Search Visualizer</h1>
+              <h1 className="text-xl sm:text-2xl font-bold">Nodeviz the Graph Search Visualizer</h1>
               <p className="text-muted-foreground text-sm hidden sm:block">Visualize search algorithms in action</p>
             </div>
             <div className="flex gap-2 items-center">
@@ -353,6 +353,8 @@ const Index = () => {
           </div>
         </div>
       </main>
+
+      <Footer /> {/* Add the Footer component here */}
 
       {contextMenu.visible && (
         <div
