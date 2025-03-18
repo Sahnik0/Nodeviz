@@ -49,7 +49,7 @@ const Team = () => {
     {
       name: "Sahnik Biswas",
       role: "Team Lead",
-      bio: "Full-stack developer with expertise in graph algorithms and visualization tools.",
+      bio: "Full-stack developer with expertise in both frontend and backend development, specializing in modern web technologies.",
       imagePath: "/sahnik.jpg",
       links: {
         github: "https://github.com/Sahnik0",
@@ -58,9 +58,9 @@ const Team = () => {
     },
     {
       name: "Sankalpa Sarkar",
-      role: "UI/UX Designer",
-      bio: "Creating intuitive user interfaces with a focus on accessibility and user experience.",
-      imagePath: "/assets/team/sankalpa.jpg",
+      role: "Full Stack Developer",
+      bio: "Full-stack developer skilled in building end-to-end web applications with modern JavaScript frameworks.",
+      imagePath: "/sankalpa.jpg",
       links: {
         github: "https://github.com/sankalpasarkar",
         linkedin: "https://linkedin.com/in/sankalpa-sarkar"
@@ -70,7 +70,7 @@ const Team = () => {
       name: "Shreyas Saha",
       role: "Algorithm Specialist",
       bio: "Expert in pathfinding algorithms and graph theory with a passion for education.",
-      imagePath: "/assets/team/shreyas.jpg",
+      imagePath: "/shreyas.jpg",
       links: {
         github: "https://github.com/shreyassaha",
         linkedin: "https://linkedin.com/in/shreyas-saha"
@@ -78,9 +78,9 @@ const Team = () => {
     },
     {
       name: "Aninda Debta",
-      role: "Frontend Developer",
+      role: "AI Developer",
       bio: "React specialist focused on creating interactive and responsive web applications.",
-      imagePath: "/assets/team/aninda.jpg",
+      imagePath: "/aninda.jpg",
       links: {
         github: "https://github.com/anindadebta",
         linkedin: "https://linkedin.com/in/aninda-debta"
@@ -90,17 +90,17 @@ const Team = () => {
       name: "Srijita Bera",
       role: "Backend Developer",
       bio: "Skilled in Node.js and database architecture with experience in high-performance systems.",
-      imagePath: "/assets/team/srijita.jpg",
+      imagePath: "/srijita.jpg",
       links: {
-        github: "https://github.com/srijitabera",
-        linkedin: "https://linkedin.com/in/srijita-bera"
+        github: "https://github.com/srijiiii",
+        linkedin: "https://www.linkedin.com/in/srijita-bera-ab5578291"
       }
     },
     {
       name: "Aishi Mahapatra",
-      role: "QA Engineer",
+      role: "Frontend Developer",
       bio: "Ensuring high-quality software through comprehensive testing and performance analysis.",
-      imagePath: "/assets/team/aishi.jpg",
+      imagePath: "/aishi.jpg",
       links: {
         github: "https://github.com/aishimahapatra",
         linkedin: "https://linkedin.com/in/aishi-mahapatra"
@@ -108,12 +108,12 @@ const Team = () => {
     },
     {
       name: "Purabi Malakar",
-      role: "DevOps Engineer",
+      role: "UI/UX",
       bio: "Managing infrastructure and optimizing deployment pipelines for seamless application delivery.",
-      imagePath: "/assets/team/purabi.jpg",
+      imagePath: "/purabi.jpg",
       links: {
-        github: "https://github.com/purabimalakar",
-        linkedin: "https://linkedin.com/in/purabi-malakar"
+        github: "https://github.com/Purabimalakar/Purabimalakar",
+        linkedin: "https://www.linkedin.com/in/purabi-malakar-b8b7052b9"
       }
     }
   ];
