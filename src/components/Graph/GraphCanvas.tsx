@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Graph, Node, Edge } from '@/lib/graphUtils';
 import { Input } from '@/components/UI/input';
@@ -41,7 +40,7 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
 }) => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 800, height: 600 });
-  const [edgeWeight, setEdgeWeight] = useState<number>(1);
+  const [edgeWeight, setEdgeWeight] = useState<string>('1');
   const isMobile = useIsMobile();
   const [showLegend, setShowLegend] = useState(!isMobile);
   
@@ -70,7 +69,7 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
     if (isEditingEdge && currentEditEdgeId) {
       const edge = graph.edges.find(e => e.id === currentEditEdgeId);
       if (edge) {
-        setEdgeWeight(edge.weight);
+        setEdgeWeight(edge.weight.toString());
       }
     }
   }, [isEditingEdge, currentEditEdgeId, graph.edges]);
@@ -262,7 +261,8 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
   };
 
   const handleEdgeWeightSubmit = () => {
-    onFinishEdgeEdit(edgeWeight);
+    const weightValue = edgeWeight.trim() === '' ? 0 : parseInt(edgeWeight) || 0;
+    onFinishEdgeEdit(weightValue);
   };
 
   const toggleLegend = () => {
@@ -307,7 +307,6 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
             strokeLinecap="round"
           />
           
-          {/* Only render arrow head for directed edges */}
           {edge.type !== 'undirected' && (
             <polygon 
               points={`${endX},${endY} ${endX - 10 * (nx + ny * 0.5)},${endY - 10 * (ny - nx * 0.5)} ${endX - 10 * (nx - ny * 0.5)},${endY - 10 * (ny + nx * 0.5)}`}
@@ -325,11 +324,9 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
             >
               <div className="flex items-center gap-1">
                 <Input
-                  type="number"
-                  min="1"
-                  max="99"
+                  type="text"
                   value={edgeWeight}
-                  onChange={(e) => setEdgeWeight(Number(e.target.value) || 1)}
+                  onChange={(e) => setEdgeWeight(e.target.value)}
                   className="h-7 w-12 text-sm text-center p-1"
                   autoFocus
                 />
@@ -337,13 +334,13 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
                   onClick={handleEdgeWeightSubmit}
                   className="w-7 h-7 bg-primary text-primary-foreground rounded-full flex items-center justify-center"
                 >
-                  <Check size={14} />
+                  <Check size={18} />
                 </button>
                 <button 
                   onClick={onCancelEdgeEdit}
                   className="w-7 h-7 bg-muted text-muted-foreground rounded-full flex items-center justify-center"
                 >
-                  <X size={14} />
+                  <X size={18} />
                 </button>
               </div>
             </foreignObject>
@@ -405,7 +402,6 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
           onTouchStart={(e) => handleNodeTouchStart(e, node.id)}
           data-node-id={node.id}
         >
-          {/* Node highlight/glow for special nodes */}
           {(isStart || isGoal || isPath) && (
             <>
               {isSquare ? (
@@ -439,7 +435,6 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
             </>
           )}
           
-          {/* Node shape - circle or square */}
           {isSquare ? (
             <rect
               x={node.x - NODE_RADIUS}
@@ -459,7 +454,6 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
             />
           )}
           
-          {/* Node label */}
           <text
             x={node.x}
             y={node.y}
@@ -470,7 +464,6 @@ const GraphCanvas: React.FC<GraphCanvasProps> = ({
             {node.label || node.id.split('-')[1]}
           </text>
           
-          {/* Node type label */}
           <text
             x={node.x}
             y={node.y + NODE_RADIUS + 15}

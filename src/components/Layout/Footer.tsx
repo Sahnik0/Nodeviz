@@ -16,7 +16,7 @@ const Footer = () => {
           
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Sahnik0/Nodeviz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 transition-colors hover:underline"
