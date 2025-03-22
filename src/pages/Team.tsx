@@ -80,7 +80,7 @@ const Team = () => {
       name: "Aninda Debta",
       role: "AI Developer",
       bio: "React specialist focused on creating interactive and responsive web applications.",
-      imagePath: "/aninda.jpg",
+      imagePath: "/aninda1.jpg",
       links: {
         github: "https://github.com/anindadebta",
         linkedin: "https://linkedin.com/in/aninda-debta"
